@@ -110,3 +110,10 @@ C:\Users\TOSHIBA\Desktop\HackerU\D231220ERClass\FinalProjects\DatingApp\DatingAp
 C:\Users\TOSHIBA\Desktop\HackerU\D231220ERClass\FinalProjects\DatingApp\DatingAppFolder\API\obj\Debug\net5.0\ref\API.dll
 C:\Users\TOSHIBA\Desktop\HackerU\D231220ERClass\FinalProjects\DatingApp\DatingAppFolder\API\obj\Debug\net5.0\API.pdb
 C:\Users\TOSHIBA\Desktop\HackerU\D231220ERClass\FinalProjects\DatingApp\DatingAppFolder\API\obj\Debug\net5.0\API.genruntimeconfig.cache
+C:\Users\TOSHIBA\Desktop\HackerU\D231220ERClass\FinalProjects\DatingApp\DatingAppFolder\API\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\TOSHIBA\Desktop\HackerU\D231220ERClass\FinalProjects\DatingApp\DatingAppFolder\API\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\TOSHIBA\Desktop\HackerU\D231220ERClass\FinalProjects\DatingApp\DatingAppFolder\API\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\TOSHIBA\Desktop\HackerU\D231220ERClass\FinalProjects\DatingApp\DatingAppFolder\API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\TOSHIBA\Desktop\HackerU\D231220ERClass\FinalProjects\DatingApp\DatingAppFolder\API\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\TOSHIBA\Desktop\HackerU\D231220ERClass\FinalProjects\DatingApp\DatingAppFolder\API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\TOSHIBA\Desktop\HackerU\D231220ERClass\FinalProjects\DatingApp\DatingAppFolder\API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
