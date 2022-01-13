@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from './services/account.service';
 
 @Component({
   selector: 'app-root',
@@ -7,37 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'The Dating App';
-  users:any;
+  title = 'The Jobs App';
+  users: any;
 
-constructor(private http:HttpClient) {
-  
-}
-  ngOnInit():void {
-    this.getUsers();
+  constructor(private http: HttpClient, private accountService: AccountService) {
+
+  }
+  ngOnInit(): void {
+    this.setCurrentUser();
   }
 
-getUsers(){
-this.http.get('https://localhost:5001/api/users').subscribe(res=>{
-this.users=res;  //WTF is? CORS!
-},
-err=>()=>{
-  console.log(err);
-},
-()=>{
-  console.log('Users Loaded');
-});
+  setCurrentUser() {
+    const userFromLS: any = localStorage.getItem('user');
+    const user = JSON.parse(userFromLS);
+    this.accountService.setCurrentUser(user);
 
-// next:(data)=>{
-//   this.users=data;
-// },
-// error: (err)=>{
-//   console.log(err);
-// },
-// complete:()=>{
-//   console.log('complete');
-// }
-
-}
+  }
 
 }

@@ -1,9 +1,11 @@
-<h1>
-    {{title}}
-</h1> <i class="fa fa-user"></i>
+<app-nav></app-nav>
 
-<ul *ngFor="let user of users">
-    <li>
-        {{user.id}} - {{user.userName}}
+<div class="container">
+
+<ul>
+    <li *ngFor="let user of [{id:1,userName:'Dani'},{id:1,userName:'Dani'},{id:1,userName:'Dani'},{id:1,userName:'Dani'},{id:1,userName:'Dani'},{id:1,userName:'Dani'},{id:1,userName:'Dani'},]">
+        {{user.id}} = {{user.userName}}
     </li>
 </ul>
+
+</div>
