@@ -8,7 +8,7 @@ import { AccountService } from './services/account.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'The Jobs App';
+  title = 'The Dating App';
   users: any;
 
   constructor(private http: HttpClient, private accountService: AccountService) {
