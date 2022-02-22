@@ -18,3 +18,4 @@ import { ToastrModule } from 'ngx-toastr';
   declarations: [],
 })
 export class CoreModule { }
+

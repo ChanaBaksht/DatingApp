@@ -61,7 +61,7 @@ export class TestErrorsComponent implements OnInit {
         console.log(response);
       }, error: (error) => {
         console.log(error);
-        this.vlaidationErrors=error;
+        this.vlaidationErrors=error; 
       }
     });
   }
