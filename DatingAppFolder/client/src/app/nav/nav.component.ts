@@ -16,7 +16,7 @@ export class NavComponent implements OnInit {
   // loggedIn: boolean = false;
   currentUser$: Observable<User | null>;
 
-  constructor(private accountService: AccountService,private router:Router,private toastr:ToastrService) {
+  constructor(private accountService: AccountService, private router: Router, private toastr: ToastrService) {
     this.currentUser$ = this.accountService.currentUser$;
   }
 
@@ -26,18 +26,12 @@ export class NavComponent implements OnInit {
 
   login() {
     this.accountService.login(this.model)
-    .subscribe({
-      next: (response) => {
-        this.router.navigateByUrl('/members');
-        console.log(response);
-      }, error: (error) => {
-        this.toastr.error(error.error);
-        console.log("Failed to login", error);
-      },
-      complete: () => {
-        console.log("Login complete");
-      }
-    });
+      .subscribe({
+        next: (response) => {
+          this.router.navigateByUrl('/members');
+          console.log(response);
+        }
+      });
   }
 
   logout() {
