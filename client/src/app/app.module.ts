@@ -28,7 +28,7 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
     ListsComponent,
     TestErrorsComponent,
     NotFoundComponent,
-    ServerErrorComponent
+    ServerErrorComponent,
   ],
   imports: [
     BrowserModule,
