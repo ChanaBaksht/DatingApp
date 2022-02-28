@@ -17,6 +17,7 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { JwtInterceptor } from './interceptors/jwt.intercepptor';
 import { SharedModule } from './modules/shared.module';
+import { MemberEditComponent } from './member-edit/member-edit.component';
 
 @NgModule({
   //Commponents:
@@ -30,6 +31,7 @@ import { SharedModule } from './modules/shared.module';
     TestErrorsComponent,
     NotFoundComponent,
     ServerErrorComponent,
+    MemberEditComponent
   ],
   //Modules:
   imports: [

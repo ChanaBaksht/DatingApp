@@ -4,7 +4,6 @@ import { MemberListComponent } from '../members/member-list/member-list.componen
 import { MemberDetailComponent } from '../members/member-detail/member-detail.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MemberCardComponent } from '../members/member-card/member-card.component';
-import { TabsModule } from 'ngx-bootstrap/tabs';
 import { SharedModule } from './shared.module';
 
 const routes:Routes=[
@@ -16,7 +15,7 @@ const routes:Routes=[
   declarations: [
     MemberListComponent,
     MemberDetailComponent,
-    MemberCardComponent
+    MemberCardComponent,
   ],
   imports: [
     CommonModule,
