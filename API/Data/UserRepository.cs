@@ -1,5 +1,3 @@
-
-
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -17,7 +15,7 @@ namespace API.Data
         private readonly DataContext _context;
         private readonly IMapper _mapper;
 
-        public UserRepository(DataContext context,IMapper mapper)
+        public UserRepository(DataContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -33,7 +31,7 @@ namespace API.Data
         public async Task<MemberDto> GetMemberAsync(string username)
         {
             return await _context.Users
-            .Where(x=>x.UserName==username)
+            .Where(x => x.UserName == username)
             .ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
             .SingleOrDefaultAsync();
         }
@@ -46,15 +44,15 @@ namespace API.Data
         public async Task<AppUser> GetUserByUserNameAsync(string username)
         {
             return await _context.Users
-            .Include(x=>x.Photos)
-            .SingleOrDefaultAsync(x=>x.UserName==username);
+            .Include(x => x.Photos)
+            .SingleOrDefaultAsync(x => x.UserName == username);
         }
 
         public async Task<IEnumerable<AppUser>> GetUsersAsync()
         {
-           return await _context.Users
-           .Include(x=>x.Photos)
-           .ToListAsync();
+            return await _context.Users
+            .Include(x => x.Photos)
+            .ToListAsync();
         }
 
         public async Task<bool> SavingAllAsync()
@@ -70,6 +68,4 @@ namespace API.Data
             _context.Entry<AppUser>(user).State = EntityState.Modified;
         }
     }
-
-
 }

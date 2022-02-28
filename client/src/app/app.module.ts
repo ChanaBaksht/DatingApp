@@ -16,10 +16,10 @@ import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { JwtInterceptor } from './interceptors/jwt.intercepptor';
+import { SharedModule } from './modules/shared.module';
 
-
-//update commponents:
 @NgModule({
+  //Commponents:
   declarations: [
     AppComponent,
     NavComponent,
@@ -31,7 +31,9 @@ import { JwtInterceptor } from './interceptors/jwt.intercepptor';
     NotFoundComponent,
     ServerErrorComponent,
   ],
+  //Modules:
   imports: [
+    SharedModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -39,6 +41,7 @@ import { JwtInterceptor } from './interceptors/jwt.intercepptor';
     BrowserAnimationsModule, 
     CoreModule
   ],
+  // services and Interceptors:
   providers: [
     {
       provide:HTTP_INTERCEPTORS,
@@ -51,7 +54,6 @@ import { JwtInterceptor } from './interceptors/jwt.intercepptor';
       multi:true
     }
   ],
-
   //start with:
   bootstrap: [AppComponent]
 })

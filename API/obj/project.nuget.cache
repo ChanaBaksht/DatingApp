@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tAWo1Wedui4SvePduBEB/jkKjZ6Echd0nXU4gIWJghhpEU5LQ7V7wM5omy9w7TzBNTFnk8yU6qygIiq2jy+laA==",
+  "dgSpecHash": "/Jo6o2wj4XlrwZIXQWQ4jj+wKdBtLsfKnYf7Sa2VdYjVRQre+ekdLPhzi7xgdHvNcPWBayEQxV7JXckRKYGhxA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\TOSHIBA\\Desktop\\HackerU\\D231220ERClass\\FinalProjects\\Daiting\\DatingApp\\Api\\API.csproj",
+  "projectFilePath": "C:\\Users\\TOSHIBA\\Desktop\\HackerU\\D231220ERClass\\FinalProjects\\Daiting\\DatingApp\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\TOSHIBA\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\TOSHIBA\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

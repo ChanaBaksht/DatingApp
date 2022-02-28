@@ -2,10 +2,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace API.DTOs
 {
-
     public class RegisterDto
     {
-
         [Required]
         public string Username { get; set; }
 
@@ -14,5 +12,4 @@ namespace API.DTOs
         public string Password { get; set; }
 
     }
-
 }
