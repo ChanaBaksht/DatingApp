@@ -17,10 +17,10 @@ export class MemberEditComponent implements OnInit {
   user!: User;
   @ViewChild('editForm') editForm: NgForm;
 
-  @HostListener('window:beforeunload',['$event'])
-  unloadNotification($event:any){
-    if(this.editForm.dirty){
-      $event.returnValue=true;
+  @HostListener('window:beforeunload', ['$event'])
+  unloadNotification($event: any) {
+    if (this.editForm.dirty) {
+      $event.returnValue = true;
     }
   }
 
@@ -47,10 +47,11 @@ export class MemberEditComponent implements OnInit {
   }
 
   updateMember() {
-    console.log(this.member);
-    this.toastr.success("Profile update successfully");
-    
-    this.editForm.reset(this.member);//update the current status to form (=pristine)
+    this.membersService.updateMember(this.member).subscribe(() => {
+      this.toastr.success("Profile update successfully");
+      this.editForm.reset(this.member);//update the current status to form (=pristine)
+    })
+
   }
 
 }

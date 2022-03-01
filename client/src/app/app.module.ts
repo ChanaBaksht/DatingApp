@@ -18,6 +18,7 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
 import { JwtInterceptor } from './interceptors/jwt.intercepptor';
 import { SharedModule } from './modules/shared.module';
 import { MemberEditComponent } from './member-edit/member-edit.component';
+import { LoadingInterceptor } from './interceptors/loading.interceptor';
 
 @NgModule({
   //Commponents:
@@ -54,6 +55,11 @@ import { MemberEditComponent } from './member-edit/member-edit.component';
       provide:HTTP_INTERCEPTORS,
       useClass:JwtInterceptor,
       multi:true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingInterceptor,
+      multi: true
     }
   ],
   //start with:
