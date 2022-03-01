@@ -3,14 +3,14 @@
         <h1>Your Profile</h1>
     </div>
     <div class="col-8">
-        <div class="alert alert-info">
-            <p>
-                <strong>Information:</strong>
-                You have made change. any unsaved changes will be lost
-            </p>
+
+        <div class="alert alert-info" *ngIf="editForm.dirty">
+            <strong>Information:</strong>
+            You have made change. any unsaved changes will be lost
         </div>
+
     </div>
-    <div class="col-4">
+    <div class="col-3">
         <div class="card">
             <img class="card-img-top img-thumbnail" src="{{member.photoUrl  || './assets/user.png'}}"
                 alt="{{member.username}}">
@@ -33,7 +33,8 @@
                 </div>
             </div>
             <div class="card-footer">
-                <button class="btn btn-success btn-block">Save Changes</button>
+                <button [disabled]="editForm.pristine" form="editForm" type="submit"
+                    class="btn btn-success btn-block">Save Changes</button>
             </div>
         </div>
     </div>
@@ -42,11 +43,13 @@
         <tabset class="member-tabset">
 
             <tab heading="About {{member.knownAs|titlecase}}">
-                <form>
+                <form #editForm="ngForm" (ngSubmit)="updateMember()" id="editForm">
                     <h4>Description:</h4>
-                    <textarea [(ngModel)]="member.introduction" name="introduction" class="form-control" rows="6"></textarea>
+                    <textarea [(ngModel)]="member.introduction" name="introduction" class="form-control"
+                        rows="6"></textarea>
                     <h4 class="mt-2">Looking for</h4>
-                    <textarea [(ngModel)]="member.lookingFor" name="lookingFor" class="form-control" rows="6"></textarea>
+                    <textarea [(ngModel)]="member.lookingFor" name="lookingFor" class="form-control"
+                        rows="6"></textarea>
 
                     <h4 class="mt-2">Interests</h4>
                     <textarea [(ngModel)]="member.interests" name="interests" class="form-control" rows="6"></textarea>
