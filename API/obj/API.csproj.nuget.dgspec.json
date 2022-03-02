@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\TOSHIBA\\Desktop\\HackerU\\D231220ERClass\\FinalProjects\\Daiting\\DatingApp\\API\\API.csproj": {}
+    "c:\\Users\\TOSHIBA\\Desktop\\HackerU\\D231220ERClass\\FinalProjects\\Daiting\\DatingApp\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\TOSHIBA\\Desktop\\HackerU\\D231220ERClass\\FinalProjects\\Daiting\\DatingApp\\API\\API.csproj": {
+    "c:\\Users\\TOSHIBA\\Desktop\\HackerU\\D231220ERClass\\FinalProjects\\Daiting\\DatingApp\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TOSHIBA\\Desktop\\HackerU\\D231220ERClass\\FinalProjects\\Daiting\\DatingApp\\API\\API.csproj",
+        "projectUniqueName": "c:\\Users\\TOSHIBA\\Desktop\\HackerU\\D231220ERClass\\FinalProjects\\Daiting\\DatingApp\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\TOSHIBA\\Desktop\\HackerU\\D231220ERClass\\FinalProjects\\Daiting\\DatingApp\\API\\API.csproj",
+        "projectPath": "c:\\Users\\TOSHIBA\\Desktop\\HackerU\\D231220ERClass\\FinalProjects\\Daiting\\DatingApp\\API\\API.csproj",
         "packagesPath": "C:\\Users\\TOSHIBA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TOSHIBA\\Desktop\\HackerU\\D231220ERClass\\FinalProjects\\Daiting\\DatingApp\\API\\obj\\",
+        "outputPath": "c:\\Users\\TOSHIBA\\Desktop\\HackerU\\D231220ERClass\\FinalProjects\\Daiting\\DatingApp\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -25,7 +25,6 @@
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -47,6 +46,10 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[11.0.0, )"
+            },
+            "CloudinaryDotNet": {
+              "target": "Package",
+              "version": "[1.17.0, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
