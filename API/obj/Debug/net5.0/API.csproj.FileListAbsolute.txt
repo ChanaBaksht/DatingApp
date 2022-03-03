@@ -188,3 +188,6 @@ C:\Users\TOSHIBA\Desktop\HackerU\D231220ERClass\FinalProjects\Daiting\DatingApp\
 C:\Users\TOSHIBA\Desktop\HackerU\D231220ERClass\FinalProjects\Daiting\DatingApp\API\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
 C:\Users\TOSHIBA\Desktop\HackerU\D231220ERClass\FinalProjects\Daiting\DatingApp\API\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 C:\Users\TOSHIBA\Desktop\HackerU\D231220ERClass\FinalProjects\Daiting\DatingApp\API\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\TOSHIBA\Desktop\HackerU\D231220ERClass\FinalProjects\Daiting\DatingApp\API\bin\Debug\net5.0\CloudinaryDotNet.dll
+C:\Users\TOSHIBA\Desktop\HackerU\D231220ERClass\FinalProjects\Daiting\DatingApp\API\bin\Debug\net5.0\Microsoft.Extensions.WebEncoders.dll
+C:\Users\TOSHIBA\Desktop\HackerU\D231220ERClass\FinalProjects\Daiting\DatingApp\API\bin\Debug\net5.0\Newtonsoft.Json.dll
