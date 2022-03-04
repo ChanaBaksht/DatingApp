@@ -65,19 +65,20 @@ namespace API
 
             app.UseRouting();
 
-            //Where you arrived mi:
+            //Where you arrived me:
             app.UseCors(policy =>
             policy
             .AllowAnyHeader()
             .AllowAnyMethod()
             .WithOrigins("https://localhost:4200"));
 
-            //Hho are yoe:
+            //Hho are you:
             app.UseAuthentication();
 
             //What you can do:
             app.UseAuthorization();
 
+            //finall, if you gotten this far: So you are OK and we open for you (= for the request) the access to controllers:
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
