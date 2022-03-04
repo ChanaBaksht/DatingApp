@@ -21,7 +21,7 @@ namespace API.Middleware
         {
             _next = next;
             _logger = logger;
-            _env = env;
+            _env = env; 
         }
 
         public async Task InvokeAsync(HttpContext context)

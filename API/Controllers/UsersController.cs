@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using API.DTOs;
@@ -51,7 +52,7 @@ namespace API.Controllers
             return Ok(usersToReturn);
         }
 
-        [HttpGet("{username}", Name ="GetUser")]
+        [HttpGet("{username}", Name = "GetUser")]
         public async Task<ActionResult<MemberDto>> GetUser(string username)
         {
             var userToReturn = await _userRepository.GetMemberAsync(username);
@@ -75,17 +76,72 @@ namespace API.Controllers
                 PublicId = result.PublicId
             };
 
-
+            //Set the default main photo:
             photo.IsMain = user.Photos.Count == 0;
 
             user.Photos.Add(photo);
 
             if (await _userRepository.SavingAllAsync())
             {
-                return CreatedAtRoute("GetUser",new {username=user.UserName},_mapper.Map<PhotoDto>(photo));
+                return CreatedAtRoute("GetUser", new { username = user.UserName }, _mapper.Map<PhotoDto>(photo));
             }
 
             return BadRequest("Problem adding Photos");
+        }
+
+        [HttpPut("set-main-photo/{photoId}")]
+        public async Task<ActionResult> SetMainPhoto(int photoId)
+        {
+            var username = User.GetUsername();
+            var user = await _userRepository.GetUserByUserNameAsync(username);
+
+            //Get the selected user photo:
+            var photo = user.Photos.FirstOrDefault(x => x.Id == photoId);
+
+            if (photo.IsMain)
+                return BadRequest("this is already the main photo");
+
+            //If user has more then 1 photo and 1 of this is already main:
+            var currentMain = user.Photos.FirstOrDefault(x => x.IsMain);
+            //Replacing a main photo:
+            if (currentMain != null)
+                currentMain.IsMain = false;
+            photo.IsMain = true;
+
+            if (await _userRepository.SavingAllAsync())
+                return NoContent();
+            return BadRequest("Failed to set photo to main");
+
+        }
+
+        [HttpDelete("delete-photo/{photoId}")]
+        public async Task<ActionResult> DeletePhoto(int photoId)
+        {
+            var username = User.GetUsername();
+            var user = await _userRepository.GetUserByUserNameAsync(username);
+
+            //Get the selected user photo:
+            var photo = user.Photos.FirstOrDefault(x => x.Id == photoId);
+
+            if (photo == null)
+                return BadRequest("Photo not found");
+
+            if (photo.IsMain)
+                return BadRequest("U can't delete the main photo");
+
+            if (photo.PublicId != null)
+            {
+                var result = await _photoService.DeletePhotoAsync(photo.PublicId);
+                if (result.Error != null)
+                    return BadRequest(result.Error.Message);
+            }
+
+            user.Photos.Remove(photo);
+
+            if (await _userRepository.SavingAllAsync())
+                return Ok();
+            return BadRequest("Failed to delete photo");
+
         }
 
     }

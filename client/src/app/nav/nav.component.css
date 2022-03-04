@@ -1,3 +1,13 @@
 .dropdown-toggle, .dropdown-item, .pointer{
     cursor: pointer;
    }
+
+   .img{
+       max-height: 50px;
+       border: 2px solid white;
+       display: inline;
+       /* 1 amount from the father's size (Rem= from basic root) */
+       margin-right: 1rem;  
+   }
+
+   

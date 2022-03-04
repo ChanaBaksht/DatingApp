@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { take } from 'rxjs';
 import { Member } from '../models/member';
+import { Photo } from '../models/photo';
 import { User } from '../models/user';
 import { AccountService } from '../services/account.service';
 import { MembersService } from '../services/members.service';
@@ -51,7 +52,7 @@ export class MemberEditComponent implements OnInit {
       this.toastr.success("Profile update successfully");
       this.editForm.reset(this.member);//update the current status to form (=pristine)
     })
-
   }
+
 
 }

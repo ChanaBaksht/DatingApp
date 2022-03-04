@@ -16,38 +16,41 @@ export class AccountService {
   private currentUserSource$ = new ReplaySubject<User | null>(1);
   currentUser$ = this.currentUserSource$.asObservable();
 
+  register(model: any) {
+    return this.http.post<User>(this.baseUrl + 'account/register', model)
+      .pipe(
+        map((user: User) => {
+          if (user) {
+            this.setCurrentUser(user);
+          }
+          return user;
+        })
+      )
+  }
+
   login(model: any) {
     return this.http.post<User>(this.baseUrl + 'account/login', model)
       .pipe(
         map((response: User) => {
           const user = response;
           if (user) {
-            localStorage.setItem('user', JSON.stringify(user));
-            this.currentUserSource$.next(user);
+            this.setCurrentUser(user);
           }
         }));
   }
 
   setCurrentUser(user: User) {
+    localStorage.setItem('user', JSON.stringify(user));
+    //All the 'subscribers' of currentUser$ are listening on this Update: 
     this.currentUserSource$.next(user);
   }
 
   logout() {
     localStorage.removeItem('user');
+    //All the 'subscribers' of currentUser$ are listening on this Update: 
     this.currentUserSource$.next(null);
   }
 
-  register(model: any) {
-    return this.http.post<User>(this.baseUrl + 'account/register', model)
-      .pipe(
-        map((user: User) => {
-          if (user) {
-            localStorage.setItem('user', JSON.stringify(user));
-            this.currentUserSource$.next(user);
-          }
-          return user;
-        })
-      )
-  }
+
 
 }
