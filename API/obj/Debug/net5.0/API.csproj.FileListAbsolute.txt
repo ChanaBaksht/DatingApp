@@ -192,6 +192,5 @@ C:\Users\TOSHIBA\Desktop\HackerU\D231220ERClass\FinalProjects\Daiting\DatingApp\
 C:\Users\TOSHIBA\Desktop\HackerU\D231220ERClass\FinalProjects\Daiting\DatingApp\API\bin\Debug\net5.0\Microsoft.Extensions.WebEncoders.dll
 C:\Users\TOSHIBA\Desktop\HackerU\D231220ERClass\FinalProjects\Daiting\DatingApp\API\bin\Debug\net5.0\Newtonsoft.Json.dll
 <<<<<<< HEAD
-C:\Users\TOSHIBA\Desktop\HackerU\D231220ERClass\FinalProjects\Daiting\DatingApp\API\obj\Debug\net5.0\API.csproj.CopyComplete
 =======
 >>>>>>> Section-11--Adding-photo-upload-finctionality
