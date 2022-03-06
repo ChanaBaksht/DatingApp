@@ -2,15 +2,9 @@
     <h2 class="text-center text-primary">Sign Up</h2>
     <br>
 
-    <div class="from-group">
-        <input type="text" class="form-control" formControlName="username" placeholder="Username">
-    </div>
-    <div class="from-group">
-        <input type="password" class="form-control" formControlName="password" placeholder="Password">
-    </div>
-    <div class="from-group">
-        <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Confirm Password">
-    </div>
+    <app-text-input formControlName="username" label="Username"></app-text-input>
+    <app-text-input formControlName="password" label="Password" type="password"></app-text-input>
+    <app-text-input formControlName="confirmPassword" label="Confirm Password" type="password"></app-text-input>
 
     <div class="form-group text-center">
         <button class="btn btn-success mr-2" type="submit">Register</button>
@@ -19,4 +13,7 @@
 </form>
 
 <p>Form value: {{registerForm.value|json}}</p>
+
 <p>Form status: {{registerForm.status}}</p>
+<p>password status: {{registerForm.get('password')?.status}}</p>
+<p>confirmPassword status: {{registerForm.get('confirmPassword')?.status}}</p>

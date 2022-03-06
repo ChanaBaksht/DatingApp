@@ -20,6 +20,7 @@ import { SharedModule } from './modules/shared.module';
 import { MemberEditComponent } from './member-edit/member-edit.component';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 import { PhotoEditorComponent } from './member-edit/photo-editor/photo-editor.component';
+import { TextInputComponent } from './forms/text-input/text-input.component';
 
 @NgModule({
   //Commponents:
@@ -28,13 +29,15 @@ import { PhotoEditorComponent } from './member-edit/photo-editor/photo-editor.co
     NavComponent,
     HomeComponent,
     RegisterComponent,
+    TextInputComponent,
     MessagesComponent,
     ListsComponent,
     TestErrorsComponent,
     NotFoundComponent,
     ServerErrorComponent,
     MemberEditComponent,
-    PhotoEditorComponent
+    PhotoEditorComponent,
+    TextInputComponent
   ],
   //Modules:
   imports: [

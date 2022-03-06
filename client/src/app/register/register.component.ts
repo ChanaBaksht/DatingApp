@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, DoCheck } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { AccountService } from '../services/account.service';
@@ -41,20 +41,14 @@ export class RegisterComponent implements OnInit {
     this.registerForm = new FormGroup({
       username: new FormControl("Hello", Validators.required),
       password: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(8)]),
-      confirmPassword: new FormControl('', [Validators.required, this.matchValues('password')])
+      confirmPassword: new FormControl('', [Validators.required, control => {
+        const controlToMatchValue = (control?.parent as FormGroup)?.controls['password']?.value;
+        return control.value == controlToMatchValue ? null : { isMatching: true };
+      }]),
     });
     this.registerForm.get('password')?.valueChanges.subscribe(() => {
       this.registerForm.get('confirmPassword')?.updateValueAndValidity();
     });
-  }
-
-  matchValues(matchTo: string): ValidatorFn {
-    return (control: AbstractControl): ValidationErrors | null => {
-      const controlValue = control.value;
-      const controlToMatch = (control?.parent as FormGroup)?.controls[matchTo];
-      const controlToMatchValue = controlToMatch?.value;
-      return controlValue == controlToMatchValue ? null : { isMatching: true };
-    }
   }
 
 }
