@@ -21,6 +21,7 @@ import { MemberEditComponent } from './member-edit/member-edit.component';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 import { PhotoEditorComponent } from './member-edit/photo-editor/photo-editor.component';
 import { TextInputComponent } from './forms/text-input/text-input.component';
+import { DateInputComponent } from './forms/date-input/date-input.component';
 
 @NgModule({
   //Commponents:
@@ -37,7 +38,8 @@ import { TextInputComponent } from './forms/text-input/text-input.component';
     ServerErrorComponent,
     MemberEditComponent,
     PhotoEditorComponent,
-    TextInputComponent
+    TextInputComponent,
+    DateInputComponent
   ],
   //Modules:
   imports: [
