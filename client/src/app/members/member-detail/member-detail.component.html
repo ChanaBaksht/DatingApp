@@ -1,8 +1,10 @@
 <div class="row" *ngIf="member">
     <div class="col-3">
         <div class="card">
-            <img class="card-img-top img-thumbnail" src="{{member.photoUrl  || './assets/user.png'}}"
-                alt="{{member.username}}">
+            <!-- <img class="card-img-top img-thumbnail" [src]="member.photoUrl || './assets/img.png'" alt="{{member.username}}">  -->
+            <img class="card-img-top img-thumbnail" src="{{member.photoUrl  || './assets/user.png'}}">
+        <!-- <img class="card-img-top img-thumbnail" [src]="member.photoUrl || './assets/img.png'"> -->
+
             <div class="card-body">
                 <div>
                     <strong>Location:</strong>
